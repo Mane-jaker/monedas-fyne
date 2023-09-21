@@ -9,7 +9,6 @@ import (
 	"fyne.io/fyne/v2/container"
 	"fyne.io/fyne/v2/layout"
 	"fyne.io/fyne/v2/widget"
-	"github.com/Mane-jaker/archero-2/src/screens"
 )
 
 func MainMenu() fyne.Window {
@@ -25,10 +24,7 @@ func MainMenu() fyne.Window {
 
 	// Botones
 	boton1Jugador := widget.NewButton("1 Jugador", func() {
-		gameWindow := screens.GameScreen()
-
-		gameWindow.ShowAndRun
-
+		//boton1
 	})
 
 	boton2Jugadores := widget.NewButton("2 Jugadores", func() {
