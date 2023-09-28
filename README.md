@@ -1,2 +1,2 @@
 # archero-2
-El juego del telefono pero en escritorio y con fyne de golang 
+olvidenlo se convirtio en un juego de lanzar monedas xd
