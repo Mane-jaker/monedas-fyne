@@ -2,6 +2,7 @@ package screens
 
 import (
 	"azar/src/models"
+	"fmt"
 	"image/color"
 	"time"
 
@@ -23,6 +24,37 @@ func NewGame(window fyne.Window, app fyne.App) *Game {
 
 func (g *Game) Play(bet string) {
 	results := make(chan string)
+	label := canvas.NewText("3", color.White)
+
+	label.Resize(fyne.NewSize(100, 100))
+
+	label.TextSize = 30
+
+	label.Move(fyne.NewPos(735, 100))
+
+	g.container.Add(
+		label,
+	)
+
+	timer := time.NewTimer(time.Second)
+
+	count := 3
+
+	updateLabel := func() {
+		count--
+
+		label.Text = fmt.Sprint(count)
+	}
+
+	go func() {
+		for range timer.C {
+			updateLabel()
+			timer.Reset(time.Second)
+			if count == 0 {
+				timer.Stop()
+			}
+		}
+	}()
 
 	for i := 0; i < 3; i++ {
 		m := models.NewCoin()

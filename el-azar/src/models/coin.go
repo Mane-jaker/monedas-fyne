@@ -31,7 +31,7 @@ func NewCoin() *Coin {
 
 func (m *Coin) Throw(results chan<- string, rang int) {
 	m.side = "" // The coin is spinning
-	time.Sleep(2 * time.Second)
+	time.Sleep(3 * time.Second)
 	random := (rand.Intn(rang)) % 2
 	if (random) == 0 {
 		m.side = "star"
